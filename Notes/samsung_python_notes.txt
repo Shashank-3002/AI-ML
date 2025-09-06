@@ -1,0 +1,854 @@
+KLEIT SAMSUNG PYTHON TRAINING DECEMBER-2024
+
+DAY1 MONDAY 09-12-2024
+
+1. Create Github Account
+2. Create new Repo
+	1. Click on "+" on top right and Click New Repository
+	2. Give repo name, keep the repo public, add the necessary description and slect the check box "add-readme file" and then click "create repository"
+My Repo Link:
+https://github.com/neelmyna/kleit_dec2024
+
+3. Organising and Arranging Files and Folders in our System:
+	1. Create new folder named "software" in C drive
+	2. Create following folders inside "C:\software"
+		git, pyhton, vs_code, notepad_pp, mingw, jdk, eclipse, mysql, postman, node etc.
+	3. Download all the installer files and cut and paste them from "downloads" folder into respective folder.
+	4. Now Install them one by one by using double click
+	5. Add the path of the Applications to "environment variables" which we wish to use the CLI from any path of our choice.
+	6. Check if the CLIs are working in the path of your choice.
+	
+4. Cofigure your github account on your system.
+	$ git config --global user.name "neelmyna"
+	$ get config --global user.email "nithinemail@gmail.com"
+
+5. Steps to create PAT (personal access token)
+	1. Click on Profile Pic (Right Top most corner) -> Click settings
+	2. In new page, sroll down and bottom left corner -> Click Developer settings
+	3. On Left side, Under personal access tokens -> Click down arrow -> Click tokens Classic
+	4. In new window -> Click Generate new token -> Click Classic
+	5. U may be prompted for password (Complete this task)
+	6. Add a note: 
+	7. Expiration: Select No Expiration
+	8. Do no other changes and scroll down -> Click generate token
+	9. Copy the PAT and mail/whatsApp to yourself 
+
+To download a public Repo, use the below command:
+$ git clone https://github.com/neelmyna/kleit_dec2024
+
+To set the Configurations:
+$ git config --global user.name "your_git_username"
+$ git config --global user.email "your_email"
+
+To update my Remote Repo, use the below 3 commands:
+
+1. Mark the files that need to be updated (Stage the Changes)
+1.
+$ git add .
+OR
+$ git add c:\learning\python\samsung_python_training
+
+Here, . (dot) means, current folder (directory or path)
+
+2. Commit the staged changes (git will create the object to be sent to server)
+$ git commit -m "your message"
+
+3. Now send the changes that need to be updated in the remote repo.
+Note that, the pull command is implicitly 1st run before the push.
+$ git push origin main
+
+NOTE: To keep cheking the changes, use the below command:
+$ git status
+
+Template Command to clone our Repo using PAT:
+$ git clone https://PAT@github.com/neelmyna/kleit_dec2024
+
+OPERATORS IN PYTHON:
+
+ARITHMETIC OPERATORS:
++ - / // * % **
+
+All are binary operators (Need 2 operands)
+I/P are numbers
+O/P is also a number
+In the expresssion 10 + 5 - 12, addition is performed 1st.
+Hence arithmetic operators have Left to Right Associtivity, except the power operator.
+That is, 10 + 5 + 15 = 15 + 15 = 30
+2 ** 3 ** 2 = 2 ** 9 = 512
+The operator ** has the highest priority/precdence
+Precedence of operators:
+**
+* / // %
++ -
+
+Relational Operators:
+> < >= <= != ==
+All are Binary operators.
+I/P are numbers
+O/P is truth value (boolean)
+They have lesser precedence than arithmetic operators, but higher than logical operators.
+
+What ever we do using >= and <= can be done using > and < respectively.
+For example:
+age >= 20 and age <= 80
+is same as:
+age > 19 and age < 81
+
+[10, 20] Closed Interval
+The range includes the end values
+num >= 10 and num <= 20
+
+(30, 50) Open Interval
+The range is 31 to 49 because it doesn't include the end values
+num > 30 and num < 50
+
+[20, 40) Right Open
+The range is 20 to 39
+num >= 20 and num < 40
+
+A student can enroll into the course if her age is between 18 and 60
+student_age >= 18 and student_age <= 60
+This is more readable
+
+student_age > 17 and student_age < 61
+This is less readable
+---------------------------------------------
+LOGICAL OPERATORS:
+and or not (Strictly Short Circuiting)
+
+I/P are boolean
+O/P is boolean
+not operator is unary (We prefix the not before the value)
+and or are binary operators
+Left to Right Associtivity
+In the expresssion: op1 and op2 or op3
+op1 and op2 is performed 1st
+The o/p of a condition is always passed as i/p to the logical operators.
+----------------------------------------------------
+DAY2 PROGRAMS
+
+1. Check if a number is Even.
+
+input_number = 454
+# We have assumed 45 as the input number to the program
+
+if input_number % 2 == 0:
+    print(input_number, ' is an Even number')
+------------------------------------------
+2. Check if the user given number is Even or not.
+
+print('Enter a number to check if it is Even or not')
+input_number = int(input())
+#print(type(input_number))
+
+if input_number % 2 == 0:
+    print(input_number, ' is an Even number')
+else:
+    print(f'{input_number} is not an Even number')
+----------------------------------------------------
+3. Check if the user given number is Even or Odd.
+
+print('Enter a number to check if it is Even or not')
+input_number = int(input())
+#print(type(input_number))
+
+#if n%2==0:
+if input_number % 2 == 0:
+    print(input_number, ' is an Even number')
+else:
+    print(f'{input_number} is an Odd number')
+----------------------------------------------------
+4. Check if user given year is a leap year
+
+----------------------------------------------------
+5. Check if user given number is 2 digit number
+
+----------------------------------------------------
+6. # Read a string from the user and check if it is raining, then either go out with umbrella or go out without umbrella.
+
+input_data = input('Tell me if it is raining now (type raining if yes, anything else if no): ')
+
+if input_data.lower() == "raining":
+    print('Go out with Umbrella')
+else:
+    print('You can go out with out Umbrella')
+----------------------------------------------------
+7. Read 2 string input from user, whether it is raining and lightning, then do not go out. If it is only raining then either go out with umbrella or play in water. If it is not raining, user may go out with out umbrella.
+
+
+----------------------------------------------------
+8. Check if it is cloudy or sunny. If sunny and hot, then go out with jacket. If only sunny the go out as you wish.
+If it is cloudy, then check if it is raining. IF it is only cloudy then go out as you wish. IF rainy go out with umbrella.
+
+
+----------------------------------------------------
+9. Check if it is cloudy or sunny. If sunny and hot, then go out with jacket. If only sunny the go out as you wish.
+If it is cloudy, then check if it is raining. IF it is only cloudy then go out as you wish. IF rainy then check if it is lightning.
+If it is raining and lightning, then do not go out. If it is only raining then either go out with umbrella or play in water. If it is only cloudy and lightning then do not go out.
+
+
+----------------------------------------------------
+10.
+Accept 3 distinct numbers from the user and find the biggets among them
+
+num1
+num2
+num3
+
+if num1 > num2 and num1 > num3:
+	print num1 is big
+elif num2 > num3:
+	print num2 is big
+else:
+	print num3 is big
+----------------------------------------------------
+11.
+Accept a number and check if it is Perfect Square
+
+round()		7.5 is 8,  7.01 is 7, 7.99 is 8, 7.49 is 7
+ciel()		7.5 is 8,  7.01 is 8, 7.99 is 8, 7.0 is 7
+floor()		7.5 is 7,  7.01 is 7, 7.99 is 7, 7.0 is 7
+
+500		22.2	22		484
+196		14.0	14		196
+80		8.9		8		64
+
+Read N
+root = sqrt(N)
+print(type(root)) # float
+root = floor(root)
+print(type(root)) # int
+if root * root == N:
+	print N is perfect sq
+else:
+	print N is not a perfect sq
+
+----------------------------------------------------
+**12.
+Accept the average score from the user and print the result as follows:
+0  - 49 : Fail
+50 - 79 : Second Class
+80 - 95 : First Class
+96 - 100: Distinction
+Also check for invalid score
+
+Read SCORE
+if SCORE <= 49 and SCORE >= 0:
+	print Result = Fail
+elif SCORE <= 79:
+	print Result = Second Class
+elif SCORE <= 95:
+	print Result = First Class
+elif SCORE <= 100:
+	print Result = Distinction
+else:
+	print Invalid Score
+
+----------------------------------------------------
+int personAge;
+// personAge here is just a variable (one value only)
+
+// Now let us add properties to the age and craete an object
+EnggStudentAge:
+int age;
+final int minAge=18;
+const int maxAge=60;
+checkMinAge()
+checkMaxAge()
+getAge()
+setAge()
+
+--------------------------------------------------------
+13
+Implementation of a Restaurant App.
+Show the Menu to the customer and accept the food number from the customer and serve the food to the customer of his choice.
+
+read food_number
+switch food_number
+	print the food name according to the number
+	
+
+------------------------------------------------
+NAMING STANDARDS
+
+food_number 
+snake case (python, sql etc)
+
+foodNumber
+camel case (Java, C#, JS etc.)
+
+--------------------------------------------------------
+Level 2: Taxable Income Calculation
+Objective: Calculate taxable income after standard deductions.
+Tasks:
+• Deduct a Standard Deduction of ₹50,000 from the annual gross salary.
+• Compute the Taxable Income and display all intermediate calculations.
+Output: Display gross salary, standard deduction and taxable income
+
+Level 3: Tax and Rebate Calculation
+Objective: Compute tax payable using the New Tax Regime (2023) slabs.
+Tasks:
+1. Calculate tax based on the following slabs:
+o ₹0 - ₹3,00,000: 0%
+o ₹3,00,001 - ₹6,00,000: 5%
+o ₹6,00,001 - ₹9,00,000: 10%
+o ₹9,00,001 - ₹12,00,000: 15%
+o ₹12,00,001 - ₹15,00,000: 20%
+o Above ₹15,00,000: 30%
+2. Apply Section 87A Rebate:
+o Taxable income ≤ ₹7,00,000 → 100% rebate (tax payable = ₹0).
+3. Add a 4% Health and Education Cess to the calculated tax.
+Output:
+• Display a detailed tax breakdown, including slabs, cess, and total tax payable.
+
+tax_amount = 0
+if taxable_salary >= 300001 and taxable_salary <= 600000:
+	tax_amount_minus_cess = taxable_salary * 0.05
+elif taxable_salary >= 600001 and taxable_salary <= 900000:
+	tax_amount_minus_cess = taxable_salary * 0.1
+elif taxable_salary >= 900001 and taxable_salary <= 120000:
+	tax_amount_minus_cess = taxable_salary * 0.15
+elif taxable_salary >= 1200001 and taxable_salary <= 1500000:
+	tax_amount_minus_cess = taxable_salary * 0.2
+elif taxable_salary >= 150000:
+	tax_amount_minus_cess = taxable_salary * 0.3
+
+tax_amount = tax_amount_minus_cess + tax_amount_minus_cess * 0.04
+
+read from emp yes or no for 87a
+if yes:
+	if taxable_salary <= 700000:
+		tax_amount = 0
+
+print tax slabs
+print cess percentage
+print(tax_amount)
+----------------------------------------------------
+Level 4: Net Salary Calculation
+Objective: Calculate annual net salary after tax deductions.
+Tasks:
+1. Compute Net Salary = Annual Gross Salary - Total Tax Payable.
+2. Display:
+o Annual Gross Salary
+o Total Tax Payable (including cess)
+o Annual Net Salary
+
+net_salary = gross_annual_salary - tax_amount
+print gross_annual_salary
+print tax_amount
+print net_salary
+-------------------------
+Level 5: Report Generation
+Objective: Generate a detailed report for employees.
+Tasks:
+1. Summarize all computed details:
+o Employee Details (Name, EmpID)
+o Gross Monthly Salary
+o Annual Gross Salary
+o Taxable Income
+o Tax Payable (with breakdown)
+o Annual Net Salary
+2. Format the output as a report for better readability.
+Output:
+• Provide a clean, tabular report for employees.
+---------------------------------------------------
+DAY4 THURSDAY 12-12-24
+
+Command Line Arguments in Python:
+
+# cline1.py
+import sys
+
+print(sys.argv[0])
+print(sys.argv[1])
+print(type(sys.argv[1]))
+print(type(sys.argv))
+---------------------------------------------------
+BUILT IN FUNCTIONS OF PYTHON:
+
+type()
+Returns the DT of the value (literal) or the variable
+
+len()
+sum()
+min()
+max()
+sorted()
+sorted(reverse=True)
+
+range()
+
+range(10)
+[0, 10)
+
+range(10, 30)
+[10, 29]
+
+In both the above cases, the default increment is 1
+
+range(10, 30, 2)
+Returns: 10, 12, 14, 16, 18, 20, 22, 24, 26, 28
+
+
+range(20, 1, -2)
+Returns: 20, 18, 16, 14, 12, 10, 8, 6, 4, 2
+
+range(30, 0, -1)
+
+---------------------------------------------------
+1. Accept number from the user from command line and print its Math table for multiple upto 20
+
+N=12
+
+12 * 1 = 12
+12 * 2 = 24
+.
+12 * 20 = 240
+
+# cline1.py
+import sys
+
+# python table.py 14
+
+input_number = int(sys.argv[1])
+
+for i in range(1, 21):
+    #print(f'{input_number} * {i} = {input_number * i}')
+    print('%d * %02d = %03d'%(input_number, i, input_number*i))
+-------------------------------------------------
+# cline1.py
+import sys
+
+sum_of_numbers = 0
+print('User given numbers are')
+for i in range(1, len(sys.argv)):
+    print(sys.argv[i], end = '  ')
+    sum_of_numbers = sum_of_numbers + int(sys.argv[i])
+
+print(f'\nSum of the {len(sys.argv)-1} user given numbers is {sum_of_numbers}')
+# argv[0] argv[1] argv[2]
+-------------------------------------------------
+1. Check if a number is Prime
+2. Find sum of digits of a number
+	1. arithmetic/traditional way 2. pythonic way
+3. Find Biggest/smallest digit in a number
+**4. Find 2nd smallest digit in a number
+5. Find sum of the series: n + n2 + n3 .... up to 10 terms
+6. Find sum of the series: 1 - n + n2 - n3 .... up to m terms
+7. Find Nth Prime number
+8. Print Prime numbers between M and N ( M < N )
+9. Print the N terms of Fibo series starting with 1 and 2
+10.Find Nth Fibo term starting with 1 and 2
+11.Print Equilateral Triangle of N lines made up of stars (*)
+12. Print Pascal's Triangle of N lines
+13. Print X shape of N lines
+14. Print Hollow square of N lines
+15. Print Hollow Rhombus
+16. Print X shape inside hollow Square
+17. Find sum of Odd digits of a number
+18. Find Sum of Even Placed digits of a number (The Left most digit of the number is at position 1)
+19. Find sum of Odd placed Even digits of a number.
+20. Find Nth term of the series: 1 2 2 3 3 5 5 7 8 11 13 13
+
+
+13
+N=1
+*
+N=2
+* *
+ *
+N=3
+* *
+ *
+* *
+N=4
+*  *
+ **
+ **
+*  *
+N=5
+*   *
+ * *
+  *
+ * *
+*   *
+
+if i == j or j == N-i+1:
+	print *
+else:
+	print space
+	
+# cline1.py
+import sys
+
+input_number = int(sys.argv[1])
+
+for i in range(1, input_number+1):
+    for j in range(1, input_number+1):
+        if i == j or j == input_number - i + 1:
+            print('* ', end='')
+        else:
+            print('  ', end='')
+    print()
+------------------------------------------
+N=567
+S=0
+
+until N is not 0:
+	R=567%10=7
+	N=N//10=567//10=56
+	S=S+R=0+7=7
+
+until N is not 0:
+	R=56%10=6
+	N=N//10=56//10=5
+	S=S+R=7+6=13
+	
+until N is not 0:
+	R=5%10=5
+	N=5//10=0
+	S=13+5=18
+	
+Loop breaks because N is 0
+-------------------------------------------------------------
+N=7899
+S=0
+
+i=	1	2	3	4
+R=	9	9	8	7
+N=789	78	7	0
+S=	9	18	26	33
+-------------------------------------------------------------------
+LIST:
+
+1. List is a DS where all its elements are stored in continuous memory locations
+2. The elements of the list can be of different DTs. A element of a list can be a list itself.
+3. However, it is good practice to have list of elements of same DT.
+4. A list is mutable. Thus we can add and delete elements to/from a list.
+5. List can have duplicate elements.
+6. List is Ordered. That is, we can access list elements using index.
+7. List is a class. Thus we have lot of properties which can be applied on a list.
+-------------------------------------------------------------
+DAY7 SATURDAY 14-12-2024
+
+Read as many strings as you wish from comman line. Each string has 2 parts which are seperated by space. The 1st part is name of the state and the 2nd part is its capital.
+Now create 2 lists named states and capitals. And store the states from the command line Args into states and similarly the capitals.
+Print the States and Capitals data in a table format. Apply proper formatting to the O/P.
+
+Eg:
+$ python states_capitals.py "goa panjim" "karnataka bengaluru" "haryana chandigarh" "odhisa bhubaneswar"
+
+states = []
+capitals = []
+
+for i in range(1, len(sys.argv)):
+	index_of_space = argv[i].find(' ')
+	states.append(argv[i][:index_of_space])
+	capitals.append(argv[i][index_of_space+1:])
+	
+print('%-15 %-15s'%('STATE', 'CAPITAL'))
+print('-' * 32)
+for i in range(len(sys.argv)-1):
+	print('%-15 %-15s'%(states[i], capitals[i]))
+-------------------------------------------------------
+Download MySQL:
+Create a folder named "mysql" in C:\software
+G search: Download MySQL
+open: https://www.mysql.com/downloads/
+Scroll down and click: MySQL Community (GPL) Downloads 
+Click: MySQL Installer for Windows
+Observe the version 8.0.xx
+Download the msi file of size 3xx MB
+Now, cut and paste the installer file from downloads folder to C:\software\mysql
+
+Installation of MySQL:
+Double Click the installer file
+	Choosing the setup File: (check box) Full -> Click Next
+	Installation: Click Execute -> Click Next
+	Product Configuration: Click Next
+	Type and Networking: Do not change the settings (remember the port number 3306) Click Next
+	Authentication Method: (No changes) Click Next
+	Accounts and Rolls: Add the Root Password as "root123" -> Click Next
+	Windows service: Click Next
+	Server File Permissions: Click Next
+	Apply Configurations: Click Execute -> Click Finish
+	Product Configuration: Click Next
+	MySQL Router Config: Click Finish
+	Product Configuration: Click Next
+	Connect to Server: Enter password and Click Check (Connection succeeded must appear)
+	Apply Configurations: Click Execute -> Click Finish
+	Product Configuration: Click Next
+	Installation Complete: Click Finish
+----------------------------------------------------
+DAY8 SUNDAY 15-12-2024
+
+Quick Sort:
+	quick_sort()
+	partition()
+
+In the Partition, we accessed all the elements of the array to partitioned.
+There were n elements in the array.
+Hence the efficiency of Partition algorithm is O(n)
+
+The quick_sort() function is a recursive function and in each recursive call, we divided the array into 2 parts.
+Hence the efficiency of recursion is O(LogN)
+
+So the total efficiency of Quick sort is O(N LogN)
+
+However, in the worst case (when the input array is already sorted), then we saw that the efficency worsened to O(N square)
+
+WCE: O(N square)
+BCE: O(N LogN)
+-----------------------------------------------------------
+Binary Search:
+BCE: O(1)
+WCE: O(LogN)
+
+--------------------------------------------------------------
+BUBBLE SORT: Brute Force
+
+We start comparing consecutive elements of the array from one of the array to another end/corner.
+If the 1st/left element is bigger than the 2nd/right, then we swap them. And this comparison we continue until end of the array.
+Thus we end up bubbling the biggest number to the end of the array.
+Now this element is in its final postion (It must not be disturbed)
+Now, start again from the beginning and do the same job until the 2nd biggest element is bubbled/moved to its final position.
+
+23  2  12  5  9  15  7
+
+
+2  5  7  9  12  15  23
+
+Before Optimization:
+WCE: O(n2)
+BCE: O(n2)
+
+After Optimization:
+WCE: O(n2)
+BCE: O(n)
+
+When to use and when not to use Bubble sort.
+----------------------------------------------------------------
+Insertion Sort: Decrease and Conquer
+
+What to decrease?
+We decrease the amount of problem.
+We use Optimistic start.
+Even before starting the sort, insertion sort reconizes/observes that there is already a sorted array.
+
+12   44   2   10   9   17   7
+12
+12   44
+2    12   44
+2    10   12   44
+2    9    10   12   44
+2    9    10   12   17    44
+2    7    9    10   12   17    44
+
+
+2    7    9    10   12   17    44
+2
+2    7
+2    7    9
+2    7    9    10
+
+23  17  13   11  7  5  3  2
+23
+17  23
+13  17  23
+13  17  23
+11  13  17  23
+
+When to use Insertion Sort:
+1. When we are sorting an almost sorted array O(n)
+2. When we are sorting a samller sized array  O(n2)
+
+When not to use Insertion Sort:
+When the i/p array is almost sorted and its size is very big and we are sorting in reverse.
+Assume there are One lakh elements and the last 1000 elements has to be inserted at the front end. Here, for every element we have to do approx 10000 shifts. Thus we have a total of 1000 * 100000 = 10(8) shifts
+
+BCE: O(n)
+WCE: O(n2)
+------------------------------------------------------
+Domain:
+	eCommerce, college, library, clinic.....
+
+	Entities:
+	eCommerce: admin, customer, product
+	clinic: receptionist, doctor, patient
+	college: course, student, faculty, principal
+	
+eCommerce:
+	admin: id, name, password
+	customer: id, name, location, ph_number, email
+	product: id, price, m_date, exp_date, category
+	
+Domain -> Sub-Domain -> entities -> attributes -> (DT and constraints)
+
+In Database (mysql, postgres, mongodb, cassendra) we create a database (DB) for every Domain
+And in each DB, we create tables/collections for every entity
+
+A row/document in a table/collection is one instance of the entity.
+The row is also called as tuple/record
+
+airlines:
+	id, code, name, country, category
+
+Entity: flight
+flights
+	id			int			unique		not null	primary key
+	airline_id	int			foreign key
+	source		varchar(32)				not null
+	destination	varchar(32)				not null
+	fare		float					not null	check(fare >= 2000)
+	duratiion	float					not null
+	capacity	int
+	
+Lets use RDBMS
+
+CREATE TABLE IF NOT EXISTS flights(id INT PRIMARY KEY AUTO_INCREMENT, source VARCHAR(32) NOT NULL, destination VARCHAR(32) NOT NULL, fare FLOAT 
+NOT NULL, duratiion FLOAT NOT NULL, capacity int);
+
+insert into flights(source, destination, fare, duratiion, capacity) values('delhi', 'mumbai', 4500, 2.15, 180);
+
+insert into flights(source, destination, fare, duratiion) values('delhi', 'bengaluru', 6500, 3.05);
+
+insert into flights(source, destination, fare, duratiion, capacity) values('delhi', 'mumbai', 4500, 2.15, 180);
+
+insert into flights(source, destination, fare, duratiion) values('delhi', 'bengaluru', 6500, 3.05);
+
+DATABASE NOTES:
+
+connection URL:
+http://localhost:3306
+
+Here 3306 is Port Number
+localhost means we are connecting to locally available (on the same machine/system) instance of mysql.
+
+root is the username of our mysql instance
+
+MYSQL COMMANDS:
+
+mysql> show databases;
+// Lists the available/created databases
+
+mysql> select database();
+// Lists the current database under use
+O/P: NULL  (No DB is selected, i.e., we are not inside any DB)
+
+mysql> use sys;
+// To switch a specific DB
+
+mysql> create database nithin_db;
+// Creates a new database with name "nithin_db"
+
+mysql> show tables;
+// Lists the available tables in the DB we are in.
+
+Constraints in RDBMS:
+unique
+not null
+check
+default
+auto_increment
+primary key
+references
+
+Person
+persons
+	id, name, gender, location, age
+	
+What Entity
+Entity fields
+DT of the fields
+constraints of the fields
+
+field_name	DT			Constraint
+id			int			unique and not null 
+name		varchar(50)	not null
+gender		varchar(2)	
+location	varchar(50)
+age			int			default
+
+create table IF NOT EXISTS persons(id int primary key auto_increment, name varchar(50) not null, gender varchar(2), location varchar(50), age int check(age > 0));
+
+-------------------------------------------------
+select * from persons;
+// To view all fields of the rows in the table
+
+select name, location from persons;
+OR
+select name as "person name", location as city from persons;
+// To list only specific fields of the rows in the table
+
+select location from persons;
+// To list only the location of all rows in the table
+
+select distinct location from persons;
+// To list only the unique locations from the table
+
+select * from persons where age < 18;
+// List the persons who are of the age below 18
+
+select * from persons where location = 'hubballi';
+// List the persons from the city hubballi
+
+select * from persons where age between 20 and 50;
+// List the persons aged between 20 and 50
+
+select * from persons where name like 'a%';
+// List all the persons whose name starts with 'a'
+
+select * from persons where name like 'a%a';
+// List all the persons whose name starts with 'a' and ends with 'a'
+
+select * from persons where name like 'a__a';
+-- List all the persons whose name starts with 'a' and ends with 'a' and has totally 4 characters in it
+
+select * from persons where location in('hubballi', 'dharwad', 'belagavi');
+OR
+select * from persons where location = 'hubballi' or location = 'dharwad' or location = 'belagavi';
+-- List persons who are from hubballi, dharwad and belagavi
+
+select * from persons where location = null; // incorect
+select * from persons where location = 'null';// incorrect
+select * from persons where location is null;//correct
+-- List the rows where location is not added
+
+select avg(age) as average_age from persons;
+-- Print average age of all persons
+
+
+create table employees(id int primary key auto_increment, name varchar(50) not null, designation varchar(40) not null, technology varchar(30) not null, phone_num bigint unique, commission int, salary float default 0, years_of_exp int);
+
+
+byte	tinyint
+short	smallint
+int		int
+long	bigint
+
+1 1 1 0 0 1
+32 + 16 + 8 + 1 = 57
+
+Queries:
+1. Update salary and technology of the employee with specific id.
+2. Alter table (meta data) persons add constraint not null to location.
+3. Alter table employees change the data type of commission from int to float
+4. delete the employees who have the designation 'designer'
+5. delete the employee with a specific id
+6. search for a person with specific id
+7. search for employees of specific designation
+---------
+group by
+1. Print the average salaries of employees of different designations
+2. Print the sum of salaries of employees of different technology.
+3. Print all the columns of all rows, but print commission+salary as Total_salary
+
+ifnull(commission, 0) + salary as total_salary
+---------------------------------------------------------
+
+
+
+
+
+
+
