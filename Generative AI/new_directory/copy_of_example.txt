@@ -1,0 +1,26 @@
+Successfully Deployed an AI-Powered Streamlit App on Google Cloud Run!
+
+As part of my Generative AI learning journey, I built and deployed a Streamlit app integrated with Gemini API in Vertex AI — fully containerized and live on Google Cloud Run.
+
+Highlights of the App:
+Supports Gemini 2.0 Flash, Flash-Lite & Gemini 2.5 models
+Multiple interactive modules:
+• Marketing Campaign Generator
+• Story Generator with custom genres & characters
+• Image Playground
+• Video Playground with Q&A on visual inputs
+Deployed with Docker + Artifact Registry + Cloud Build + Cloud Run
+
+Glimpses from my journey:
+Cloud Shell build & dependency setup
+Docker image pushed to Artifact Registry
+Successful Cloud Run deployment (with live service URL)
+App outputs — marketing campaigns, creative stories, and video insights
+
+Key Learnings Gained:
+Vertex AI + Gemini API integration for multimodal AI
+Building user-friendly apps with Streamlit
+End-to-end deployment using Google Cloud Run
+Cloud-native workflows with Artifact Registry + Cloud Build
+
+Seeing the app scale seamlessly on Cloud Run was the best moment of this lab — transforming ideas into a production-ready AI application.
